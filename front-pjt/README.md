@@ -85,17 +85,24 @@ npm run build
 ## 프로젝트 구조 예시
 
 ```
-ssafy-custom-news-frontend/
+front-pjt/
 ├── public/
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── views/
-│   ├── router/
-│   └── store/
+│   ├── api/          # axios 인스턴스 및 API 서비스 (index.js, newsService.js)
+│   ├── assets/       # 폰트, scss, 정적 데이터
+│   ├── common/       # 공통 UI 컴포넌트 (Input, Button, Pagination 등)
+│   ├── components/   # 화면 구성 컴포넌트
+│   ├── composables/  # 재사용 로직 (useDate, useValidation)
+│   ├── router/       # Vue Router 설정 (index.js)
+│   ├── views/        # 라우트 단위 페이지
+│   ├── App.vue
+│   └── main.js
+├── index.html
 ├── .env
 ├── package.json
 └── vite.config.js
 ```
+
+> 상태 관리는 **Pinia**(+ pinia-plugin-persistedstate)를 사용하며, `main.js`에 등록되어 컴포넌트/스토어 단위로 정의합니다.
 
 ---
